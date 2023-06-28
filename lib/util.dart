@@ -8,7 +8,7 @@ import 'package:hive/hive.dart';
 /// Utility to create a hybrid cache from Hive and Memory.
 Future<HybridCache<K, T>> buildHybridHiveCache<K, T>(
   String boxName, {
-  required HiveCipher encryptionCipher,
+  HiveCipher? encryptionCipher,
   required HiveModelLoader<T> loader,
 }) async {
   final slowCache = await buildHiveCache<K, T>(
