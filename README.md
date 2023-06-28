@@ -13,8 +13,11 @@ If you need something specific, you just need to implement the `LocalCache` abst
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Just install the package to get started.
+
+```bash
+flutter pub add data_cache
+```
 
 ## Usage
 
@@ -22,6 +25,7 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
+
 const like = 'sample';
 ```
 

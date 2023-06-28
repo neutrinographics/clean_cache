@@ -1,3 +1,5 @@
+library data_cache;
+
 import 'package:data_cache/cache/hive_cache.dart';
 import 'package:data_cache/cache/hybrid_cache.dart';
 import 'package:data_cache/cache/memory_cache.dart';

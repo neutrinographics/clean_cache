@@ -1,3 +1,5 @@
+library data_cache;
+
 import 'dart:convert';
 import 'package:data_cache/data_cache.dart';
 import 'package:hive/hive.dart';

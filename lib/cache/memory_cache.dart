@@ -1,3 +1,5 @@
+library data_cache;
+
 import 'package:data_cache/data_cache.dart';
 
 /// A cache that's only stored in memory.

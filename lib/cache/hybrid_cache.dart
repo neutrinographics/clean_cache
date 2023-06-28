@@ -1,3 +1,5 @@
+library data_cache;
+
 import 'package:data_cache/data_cache.dart';
 
 /// Stores data in two different local cache to keep speed up reads.
