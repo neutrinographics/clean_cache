@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:data_cache/cache/hive_cache.dart';
+import 'package:clean_cache/cache/hive_cache.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';

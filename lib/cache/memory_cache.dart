@@ -1,9 +1,9 @@
-library data_cache;
+library clean_cache;
 
-import 'package:data_cache/data_cache.dart';
+import 'package:clean_cache/clean_cache.dart';
 
 /// A cache that's only stored in memory.
-class MemoryCache<K, T> implements DataCache<K, T> {
+class MemoryCache<K, T> implements CleanCache<K, T> {
   final Map<K, T> cache = {};
 
   @override

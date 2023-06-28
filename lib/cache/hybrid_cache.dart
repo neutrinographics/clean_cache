@@ -1,12 +1,12 @@
-library data_cache;
+library clean_cache;
 
-import 'package:data_cache/data_cache.dart';
+import 'package:clean_cache/clean_cache.dart';
 
 /// Stores data in two different local cache to keep speed up reads.
 /// Ideally, [slowCache] will be a persistent storage, and [fastCache] will be a memory storage with faster read access.
-class HybridCache<K, T> implements DataCache<K, T> {
-  final DataCache<K, T> slowCache;
-  final DataCache<K, T> fastCache;
+class HybridCache<K, T> implements CleanCache<K, T> {
+  final CleanCache<K, T> slowCache;
+  final CleanCache<K, T> fastCache;
 
   HybridCache({required this.slowCache, required this.fastCache});
 

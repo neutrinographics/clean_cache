@@ -1,10 +1,10 @@
-library data_cache;
+library clean_cache;
 
 /// The base cache abstraction. Implement this to create your own cache.
 ///
 /// Usually, implementations should raise an exception if a problem occurs,
 /// such as a record does not exist while reading.
-abstract class DataCache<K, T> {
+abstract class CleanCache<K, T> {
   /// Writes a value to the data source.
   Future<void> write(K key, T data);
 

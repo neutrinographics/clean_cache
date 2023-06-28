@@ -1,8 +1,8 @@
-library data_cache;
+library clean_cache;
 
-import 'package:data_cache/cache/hive_cache.dart';
-import 'package:data_cache/cache/hybrid_cache.dart';
-import 'package:data_cache/cache/memory_cache.dart';
+import 'package:clean_cache/cache/hive_cache.dart';
+import 'package:clean_cache/cache/hybrid_cache.dart';
+import 'package:clean_cache/cache/memory_cache.dart';
 import 'package:hive/hive.dart';
 
 /// Utility to create a hybrid cache from Hive and Memory.

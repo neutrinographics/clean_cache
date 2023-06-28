@@ -1,7 +1,7 @@
-name: data_cache
+name: clean_cache
 description: A cache abstraction designed for Clean Architecture.
 version: 1.0.0
-homepage: https://github.com/neutrinographics/data_cache
+homepage: https://github.com/neutrinographics/clean_cache
 
 environment:
   sdk: '>=3.0.5 <4.0.0'

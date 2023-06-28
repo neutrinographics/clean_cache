@@ -1,13 +1,13 @@
-library data_cache;
+library clean_cache;
 
 import 'dart:convert';
-import 'package:data_cache/data_cache.dart';
+import 'package:clean_cache/clean_cache.dart';
 import 'package:hive/hive.dart';
 
 /// Transforms JSON into a model.
 typedef HiveModelLoader<T> = T Function(Map<String, dynamic> json);
 
-class HiveCache<K, T> implements DataCache<K, T> {
+class HiveCache<K, T> implements CleanCache<K, T> {
   final Box box;
   final HiveModelLoader<T> loader;
 

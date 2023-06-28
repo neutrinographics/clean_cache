@@ -1,5 +1,5 @@
 Designed for use in projects that follow [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) pattern,
-data_cache is a simple cache abstraction allowing you to easily mock it for unit tests.
+clean_cache is a simple cache abstraction allowing you to easily mock it for unit tests.
 
 ## Features
 
@@ -16,13 +16,13 @@ If you need something specific, you just need to implement the `LocalCache` abst
 Just install the package to get started.
 
 ```bash
-flutter pub add data_cache
+flutter pub add clean_cache
 ```
 
 ## Usage
 
 ```dart
-import 'package:data_cache/cache/memory_cache.dart';
+import 'package:clean_cache/cache/memory_cache.dart';
 
 // This stores an ExampleModel with a String key.
 final cache = MemoryCache<String, ExampleModel>();

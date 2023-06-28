@@ -1,20 +1,20 @@
-import 'package:data_cache/cache/hybrid_cache.dart';
-import 'package:data_cache/data_cache.dart';
+import 'package:clean_cache/cache/hybrid_cache.dart';
+import 'package:clean_cache/clean_cache.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import 'hybrid_cache_test.mocks.dart';
 
-@GenerateMocks([DataCache])
+@GenerateMocks([CleanCache])
 void main() {
-  late MockDataCache<String, String> fastCache;
-  late MockDataCache<String, String> slowCache;
+  late MockCleanCache<String, String> fastCache;
+  late MockCleanCache<String, String> slowCache;
   late HybridCache<String, String> hybridCache;
 
   setUp(() {
-    fastCache = MockDataCache();
-    slowCache = MockDataCache();
+    fastCache = MockCleanCache();
+    slowCache = MockCleanCache();
     hybridCache = HybridCache(
       fastCache: fastCache,
       slowCache: slowCache,
