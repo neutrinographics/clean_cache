@@ -21,16 +21,11 @@ flutter pub add data_cache
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
+import 'package:data_cache/cache/memory_cache.dart';
 
-const like = 'sample';
+// This stores an ExampleModel with a String key.
+final cache = MemoryCache<String, ExampleModel>();
+final model = ExampleModel();
+await cache.write(model.id, model);
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
