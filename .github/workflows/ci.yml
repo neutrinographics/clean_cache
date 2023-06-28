@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.10.x'
+          channel: 'stable'
+      # Get flutter dependencies.
+      - run: flutter pub get
+      # Check for any formatting issues in the code.
+      - run: dart format --set-exit-if-changed .
+      # Statically analyze the Dart code for any errors.
+      - run: flutter analyze .
+      # Run all the tests.
+      - run: flutter test
+    deploy:
+      name: Deploy
+      runs-on: ubuntu-latest
+      needs: test
+      if: github.ref == 'refs/heads/master'
+      steps:
+        - name: Deploy Package
+          run: flutter pub publish
+
+
