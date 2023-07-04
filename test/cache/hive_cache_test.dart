@@ -32,12 +32,19 @@ class MockModel extends Equatable {
 void main() {
   late MockBox mockBox;
   late HiveCache<String, MockModel> cache;
+  late HiveCache<String, List<int>> listCache;
 
   setUp(() {
     mockBox = MockBox();
     cache = HiveCache(
       box: mockBox,
       loader: (json) => MockModel.fromJson(json),
+    );
+    listCache = HiveCache(
+      box: mockBox,
+      loader: (json) {
+        return json.cast<int>() as List<int>;
+      },
     );
   });
 
@@ -84,6 +91,21 @@ void main() {
         // assert
         expect(result, tModel);
         verify(mockBox.get(tModel.id));
+      },
+    );
+
+    test(
+      'should read the list from hive',
+      () async {
+        // arrange
+        const key = 'id';
+        when(mockBox.get(any)).thenReturn(json.encode([1, 2, 3]));
+        // act
+        final result = await listCache.read(key);
+        // assert
+        const tExpected = [1, 2, 3];
+        expect(result, tExpected);
+        verify(mockBox.get(key));
       },
     );
 
