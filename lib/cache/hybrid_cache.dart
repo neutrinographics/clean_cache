@@ -41,7 +41,9 @@ class HybridCache<K, T> implements CleanCache<K, T> {
     if (await fastCache.exists(key)) {
       return fastCache.read(key);
     } else {
-      return slowCache.read(key);
+      final value = await slowCache.read(key);
+      await fastCache.write(key, value);
+      return value;
     }
   }
 

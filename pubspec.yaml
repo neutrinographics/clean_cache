@@ -1,6 +1,6 @@
 name: clean_cache
 description: A cache abstraction designed for Clean Architecture.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/neutrinographics/clean_cache
 
 environment:

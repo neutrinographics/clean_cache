@@ -120,6 +120,7 @@ void main() {
         expect(result, tValue);
         verify(fastCache.exists(tKey));
         verify(slowCache.read(tKey));
+        verify(fastCache.write(tKey, tValue));
         verifyNoMoreInteractions(fastCache);
         verifyNoMoreInteractions(slowCache);
       },
