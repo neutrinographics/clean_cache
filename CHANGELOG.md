@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Reduced the minimum supported environment SDK to 3.0.0
+
 ## 1.0.3
 
 * Reads from the `HybridCache` will now cache values from the slow cache into the fast cache. This will make subsequent reads faster.
