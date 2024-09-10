@@ -37,6 +37,17 @@ void main() {
   );
 
   test(
+    'should writeAll to both caches',
+    () async {
+      // act
+      await hybridCache.writeAll({tKey: tValue});
+      // assert
+      verify(fastCache.writeAll({tKey: tValue}));
+      verify(slowCache.writeAll({tKey: tValue}));
+    },
+  );
+
+  test(
     'should delete from both caches',
     () async {
       // nothing to arrange

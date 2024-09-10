@@ -8,6 +8,9 @@ abstract class CleanCache<K, T> {
   /// Writes a value to the data source.
   Future<void> write(K key, T data);
 
+  /// Writes all values to the data source.
+  Future<void> writeAll(Map<K, T> data);
+
   /// Reads a value from the data source.
   /// This will raise a [CacheException] if the value does not exist,
   Future<T> read(K key);

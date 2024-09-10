@@ -39,6 +39,11 @@ class HiveCache<K, T> implements CleanCache<K, T> {
   }
 
   @override
+  Future<void> writeAll(Map<K, T> data) async {
+    await box.putAll(data);
+  }
+
+  @override
   Future<List<K>> keys() async {
     return box.keys.toList() as List<K>;
   }
