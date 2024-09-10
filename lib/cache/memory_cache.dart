@@ -12,6 +12,11 @@ class MemoryCache<K, T> implements CleanCache<K, T> {
   }
 
   @override
+  Future<void> writeAll(Map<K, T> data) async {
+    cache.addAll(data);
+  }
+
+  @override
   Future<void> clear() async {
     cache.clear();
   }

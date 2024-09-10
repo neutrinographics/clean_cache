@@ -59,4 +59,10 @@ class HybridCache<K, T> implements CleanCache<K, T> {
     await slowCache.write(key, data);
     await fastCache.write(key, data);
   }
+
+  @override
+  Future<void> writeAll(Map<K, T> data) async {
+    await slowCache.writeAll(data);
+    await fastCache.writeAll(data);
+  }
 }

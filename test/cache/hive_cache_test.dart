@@ -77,6 +77,34 @@ void main() {
     );
   });
 
+  group('writeAll', () {
+    const tModel = MockModel(id: 'id');
+    final tData = {tModel.id: tModel};
+
+    test(
+      'should write all the models to hive',
+      () async {
+        // nothing to arrange
+        // act
+        await cache.writeAll(tData);
+        // assert
+        verify(mockBox.putAll(tData));
+      },
+    );
+
+    test(
+      'should raise CacheException if the models cannot be written',
+      () async {
+        // arrange
+        when(mockBox.putAll(any)).thenThrow(Exception());
+        // act
+        final call = cache.writeAll;
+        // assert
+        expect(() => call(tData), throwsA(const TypeMatcher<Exception>()));
+      },
+    );
+  });
+
   group('read', () {
     const tModel = MockModel(id: 'id');
     final tModelString = json.encode(tModel.toJson());
