@@ -1,3 +1,7 @@
+## 1.2.0
+
+* Added a method to write multiple values at a time to the cache. This can greatly improve performance.
+
 ## 1.1.0
 
 * Reduced the minimum supported environment SDK to 3.0.0
